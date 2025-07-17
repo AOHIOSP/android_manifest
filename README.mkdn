@@ -1,0 +1,37 @@
+AOHIOSP
+=======
+
+Getting started
+---------------
+
+To get started with Android, you'll need to get familiar with [Source Control Tools](https://source.android.com/setup/develop).
+
+To initialize your local repository using the AOHIOSP trees, use a command like this:
+```
+repo init -u https://github.com/AOHIOSP/android_manifest.git -b android-security-11.0.0_r76
+```
+Then to sync up:
+```
+repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags --optimized-fetch --prune
+```
+
+Building AOHIOSP
+----------------
+
+Initialize the ROM environment with the envsetup.sh script:
+
+```bash
+. build/envsetup.sh
+```
+
+Lunch your device after cloning all device sources if needed:
+
+```bash
+lunch aosp_$device-userdebug
+```
+
+Start compilation:
+
+```bash
+mka bacon
+```
